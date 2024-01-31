@@ -2,7 +2,7 @@ import { useRSVPContext } from "../hooks/useRSVPContext"
 
 const RSVPDetails = ({RSVP}) => {
     const {dispatch} = useRSVPContext()
-
+    
     const handleClick = async () => {
         const response = await fetch('/api/RSVP'+ RSVP._id,{method: 'delete'})
 
@@ -11,7 +11,7 @@ const RSVPDetails = ({RSVP}) => {
             dispatch({type:'Delete_RSVP', payload: json})
         }
     }
-
+    
     return(
         <div>
             <h4> {RSVP.name} </h4>

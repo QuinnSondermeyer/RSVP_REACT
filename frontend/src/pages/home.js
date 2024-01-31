@@ -20,12 +20,11 @@ const Home = () => {
         }
         fetchRSVP()
     })
-
     return(
         <div className="home">
             <div className="RSVPs">
-                {RSVPs && RSVPs.map((RSVPs) => (
-                    <RSVPDetails key={RSVPs._id} RSVPs = {RSVPs}/>))}
+                {RSVPs && RSVPs.map((RSVP) => (
+                    <RSVPDetails key={RSVP._id} RSVP={RSVP}/>))}
             </div>
                 <RSVPForm/>
         </div>
