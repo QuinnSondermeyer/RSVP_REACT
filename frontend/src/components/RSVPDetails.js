@@ -5,7 +5,7 @@ const RSVPDetails = ({ RSVP }) => {
 
     const handleClick = async () => {
         const response = await fetch('/api/rsvp/' + RSVP._id, {
-            method: 'delete',
+            method: 'DELETE',
         })
 
         const json = await response.json()
