@@ -7,18 +7,18 @@ const RSVPForm = () => {
     const [name, setName] = useState('')
     const [RSVPInfo, setRSVPInfo] = useState('')
     const [description, setDescription] = useState('')
-    const [addGuest, setAddGuest] = useState('')
     const [error, setError] = useState(null)
 
     const handleSubmission = async (e) => {
         e.preventDefault()
         const RSVP = { name, RSVPInfo, description }
-
+        console.log(JSON.stringify(RSVP))
         const response = await fetch('/api/rsvp', {
             method: 'POST',
             body: JSON.stringify(RSVP), //change to JSON
             headers: { 'Content-Type': 'application/json' },
         })
+
         const json = await response.json()
         if (!response.ok) {
             setError(json.error)
@@ -28,8 +28,6 @@ const RSVPForm = () => {
             setName('')
             setRSVPInfo('')
             setDescription('')
-            setAddGuest('')
-
             setError(null)
             console.log('New RSVP Added', json)
 
@@ -54,17 +52,11 @@ const RSVPForm = () => {
                 value={RSVPInfo}
             />
 
-            <label>Further Information </label>
-            <input
-                type="text"
-                onChange={(e) => setDescription(e.target.value)}
-                value={description}
-            />
             <label>Additional Guests </label>
             <input
                 type="number"
-                onChange={(e) => setAddGuest(e.target.value)}
-                value={addGuest}
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
             />
             <button> Submit RSVP </button>
         </form>

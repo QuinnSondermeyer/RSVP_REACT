@@ -22,10 +22,7 @@ const RSVPDetails = ({ RSVP }) => {
                 {RSVP.RSVPInfo}
             </p>
             <p>
-                <strong> Description: </strong> {RSVP.description}
-            </p>
-            <p>
-                <strong> Aditional Guests: </strong> {RSVP.addGuest}
+                <strong> Aditional Guests: </strong> {RSVP.description}
             </p>
             <span onClick={handleClick}>delete</span>
         </div>
