@@ -28,7 +28,7 @@ const getRSVP = async (req, res) => {
 const createRSVP = async (req, res) => {
     const { name, RSVPInfo, description, addGuest } = req.body
 
-    if (!name || !RSVPInfo || !description || addGuest) {
+    if (!name || !RSVPInfo || !description || !addGuest) {
         return res.status(400).json({ error: 'Please fill in all fields' })
     }
 

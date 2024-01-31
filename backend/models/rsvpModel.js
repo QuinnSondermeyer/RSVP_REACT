@@ -13,6 +13,10 @@ const RSVPSchema = new Schema(
             require: true,
         },
         description: {
+            type: String,
+            require: true,
+        },
+        addGuest: {
             type: Number,
             require: true,
         },
