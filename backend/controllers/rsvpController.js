@@ -21,7 +21,6 @@ const getRSVP = async (req, res) => {
   if (!rsvp) {
     return res.status(400).json({ error: "No such person has RSVPed" });
   }
-  console.log("RSVP Model", rsvp);
   res.status(200).json(rsvp);
 };
 
