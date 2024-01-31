@@ -7,7 +7,7 @@
   --error: #e7195a;
 }
 body {
-  background: #515966;
+  background: #4f5663;
   margin: 0;
   font-family: "Single";
 }
@@ -18,7 +18,7 @@ h2 {
   color: rgb(149, 235, 235);
 }
 header {
-  background: #515966;
+  background: #687283;
 }
 header .container {
   max-width: 1400px;
@@ -44,7 +44,7 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
-.RSVPDetails{
+.rsvp-details{
   background: #515966;
   border-radius: 4px;
   margin: 20px auto;
@@ -52,15 +52,28 @@ header a {
   position: relative;
   box-shadow:  2px 2px 5px rgb(35, 36, 39);
 }
-.RSVPDetails h4{
+.rsvp-details h4{
   margin: 0;
-  font-size: 0.9em;
+  font-size: 2em;
   color: rgb(201, 205, 219);
+  text-align: left;
 }
-.RSVPDetails p{
-  margin: 0 0 10px 0;
+.rsvp-details p{
+  margin: 0 0 10px 10px;
+  text-align: left;
   font-size: 1.2em;
   color: rgb(201, 205, 219);
+}
+
+.rsvp-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: poinrgb(68, 73, 78);
+  background: #3c474e;
+  padding: 6px;
+  border-radius: 50%;
+  color: #dbe8ee;
 }
 
 h3{
@@ -70,6 +83,7 @@ h3{
 label, input {
   display: block;
   color: #d6e5f5;
+  text-align: left;
 }
 input {
   padding: 10px;
@@ -79,6 +93,7 @@ input {
   border: 1px solid #1b1a1f;
   border-radius: 4px;
   box-sizing: border-box;
+  color: #1b1a1f;
 }
 form button {
   background: #235185;

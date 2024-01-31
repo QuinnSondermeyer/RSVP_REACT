@@ -1,32 +1,34 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 // context hook
-import { useRSVPContext } from "../hooks/useRSVPContext"
+import { useRSVPContext } from '../hooks/useRSVPContext'
 // components
-import RSVPDetails from "../components/RSVPDetails"
-import RSVPForm from "../components/RSVPForm"
-
+import RSVPDetails from '../components/RSVPDetails'
+import RSVPForm from '../components/RSVPForm'
 
 const Home = () => {
-    const{RSVPs, dispatch} = useRSVPContext()
+    const { RSVPs, dispatch } = useRSVPContext()
 
-    useEffect ( () => {
+    useEffect(() => {
         const fetchRSVP = async () => {
             const response = await fetch('/api/rsvp')
             const json = await response.json()
 
-            if (response.ok){
-                dispatch({type: 'Set_RSVP', payload: json})
+            if (response.ok) {
+                dispatch({ type: 'Set_RSVP', payload: json })
             }
         }
         fetchRSVP()
-    })
-    return(
+    }, [])
+
+    return (
         <div className="home">
             <div className="RSVPs">
-                {RSVPs && RSVPs.map((RSVP) => (
-                    <RSVPDetails key={RSVP._id} RSVP={RSVP}/>))}
+                {RSVPs &&
+                    RSVPs.map((RSVP) => (
+                        <RSVPDetails key={RSVP._id} RSVP={RSVP} />
+                    ))}
             </div>
-                <RSVPForm/>
+            <RSVPForm />
         </div>
     )
 }
